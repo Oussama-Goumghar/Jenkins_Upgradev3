@@ -4,7 +4,7 @@ pipeline {
         stage('Build Application') {
             steps {
                 withMaven (maven: 'maven3') {
-                    sh 'mvn pom.xml clean package'
+                    sh 'mvn -f java-tomcat-sample/pom.xml clean install'
                 }
             }
             post {
